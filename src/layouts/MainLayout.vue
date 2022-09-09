@@ -16,8 +16,20 @@
 
       <q-space />
 
-      <q-btn flat href="/sign-in" color="white" label="Sign in" />
-      <q-btn flat href="/sign-up" color="white" label="Get Started" />
+      <q-btn
+        flat
+        :href="`${urlShortenerAppLink}/sign-in`"
+        target="_blank"
+        color="white"
+        label="Sign in"
+      />
+      <q-btn
+        flat
+        :href="`${urlShortenerAppLink}/sign-up`"
+        target="_blank"
+        color="white"
+        label="Get Started"
+      />
     </q-header>
 
     <q-page-container>
@@ -27,9 +39,25 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "MainLayout",
+  setup() {
+    const urlShortenerAppProtocol = process.env.URL_SHORTENER_APP_PROTOCOL;
+    const urlShortenerAppDomain = process.env.URL_SHORTENER_APP_DOMAIN;
+    const urlShortenerAppPort = process.env.URL_SHORTENER_APP_PORT;
+
+    const urlShortenerAppLink = ref(
+      `${urlShortenerAppProtocol}://${urlShortenerAppDomain}${
+        urlShortenerAppPort ? `:${urlShortenerAppPort}` : ""
+      }`
+    );
+
+    console.log(urlShortenerAppLink);
+    return {
+      urlShortenerAppLink,
+    };
+  },
 });
 </script>
