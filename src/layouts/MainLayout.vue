@@ -54,7 +54,6 @@ export default defineComponent({
       }`
     );
 
-    console.log(urlShortenerAppLink);
     return {
       urlShortenerAppLink,
     };

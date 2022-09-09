@@ -30,6 +30,14 @@ const routes = [
   },
 
   {
+    path: "/contact-us",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/ContactUsPage.vue") },
+    ],
+  },
+
+  {
     path: "/terms-and-conditions",
     component: () => import("layouts/MainLayout.vue"),
     children: [
