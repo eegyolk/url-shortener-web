@@ -29,6 +29,22 @@ const routes = [
     children: [{ path: "", component: () => import("pages/SupportPage.vue") }],
   },
 
+  {
+    path: "/terms-and-conditions",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/TermsAndConditionsPage.vue") },
+    ],
+  },
+
+  {
+    path: "/privacy-policy",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/PrivacyPolicyPage.vue") },
+    ],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
