@@ -6,7 +6,7 @@
         class="text-h6 text-weight-bolder"
         to="/"
         color="white"
-        label="ctrl.ph"
+        label="LOGO"
       />
 
       <q-btn flat to="/features" color="white" label="Features" />
